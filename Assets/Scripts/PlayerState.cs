@@ -9,43 +9,41 @@ public class PlayerState : MonoBehaviour
     void Start()
     {
         animator = this.GetComponent<Animator>();
-        animator.SetInteger("PlayerState Int",0);
+        animator.SetInteger("PlayerState",0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if  (Input.GetKeyDown(KeyCode.W))
+        if  (Input.GetKey(KeyCode.W))
         {
-            animator.SetInteger("PlayerState Int",1);
-            Debug.Log(animator.GetInteger("PlayerState Int"));
+            animator.SetInteger("PlayerState",1);
+            Debug.Log(animator.GetInteger("PlayerState"));
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
-            animator.SetInteger("PlayerState Int",2);
-            Debug.Log(animator.GetInteger("PlayerState Int"));
+            animator.SetInteger("PlayerState",2);
+            Debug.Log(animator.GetInteger("PlayerState"));
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKey(KeyCode.A))
         {
-            animator.SetInteger("PlayerState Int",3);
-            Debug.Log(animator.GetInteger("PlayerState Int"));
+            animator.SetInteger("PlayerState",3);
+            Debug.Log(animator.GetInteger("PlayerState"));
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKey(KeyCode.LeftShift))
         {
-            animator.SetInteger("PlayerState Int",5);
-            Debug.Log(animator.GetInteger("PlayerState Int"));
+            animator.SetInteger("PlayerState",4);
+            Debug.Log(animator.GetInteger("PlayerState"));
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        else if (Input.GetKey(KeyCode.Space))
         {
-            animator.SetInteger("PlayerState Int",4);
-            Debug.Log(animator.GetInteger("PlayerState Int"));
+            animator.SetInteger("PlayerState",5);
+            Debug.Log(animator.GetInteger("PlayerState"));
         }
         else
         {
-            animator.SetInteger("PlayerState Int",0);
-            Debug.Log(animator.GetInteger("PlayerState Int"));
+            animator.SetInteger("PlayerState",0);
+            Debug.Log(animator.GetInteger("PlayerState"));
         }
-        
-        
     }
 }
