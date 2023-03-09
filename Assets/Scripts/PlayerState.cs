@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerState : MonoBehaviour
 {
     public Animator animator;
+
+    public Transform xbotTransform;
     // Start is called before the first frame update
     void Start()
     {
         animator = this.GetComponent<Animator>();
+        xbotTransform = this.transform;
         animator.SetInteger("PlayerState",0);
     }
 
@@ -23,11 +26,13 @@ public class PlayerState : MonoBehaviour
         else if (Input.GetKey(KeyCode.D))
         {
             animator.SetInteger("PlayerState",2);
+            xbotTransform.Rotate(0,90,0);
             Debug.Log(animator.GetInteger("PlayerState"));
         }
         else if (Input.GetKey(KeyCode.A))
         {
             animator.SetInteger("PlayerState",3);
+            xbotTransform.Rotate(0,-90,0);
             Debug.Log(animator.GetInteger("PlayerState"));
         }
         else if (Input.GetKey(KeyCode.LeftShift))
