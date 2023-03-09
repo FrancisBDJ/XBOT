@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerState : MonoBehaviour
 {
     public Animator animator;
-
+    public float speed = 0.01f;
     public Transform xbotTransform;
     // Start is called before the first frame update
     void Start()
@@ -25,14 +25,14 @@ public class PlayerState : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            animator.SetInteger("PlayerState",2);
-            xbotTransform.Rotate(0,90,0);
+            //animator.SetInteger("PlayerState", 2);
+            xbotTransform.Rotate(0,60 * speed * Time.deltaTime,0);
             Debug.Log(animator.GetInteger("PlayerState"));
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            animator.SetInteger("PlayerState",3);
-            xbotTransform.Rotate(0,-90,0);
+            //animator.SetInteger("PlayerState",3);
+            xbotTransform.Rotate(0,-60 * speed * Time.deltaTime,0);
             Debug.Log(animator.GetInteger("PlayerState"));
         }
         else if (Input.GetKey(KeyCode.LeftShift))
